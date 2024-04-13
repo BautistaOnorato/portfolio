@@ -1,0 +1,21 @@
+---
+import type { IconProps } from "../types"
+
+interface Props extends IconProps {}
+const { size, color } = Astro.props
+---
+<svg xmlns="http://www.w3.org/2000/svg" width={size || 24} height={size || 24} viewBox="0 0 24 24">
+	<g transform="rotate(-90 12 12)">
+		<g fill="none" stroke={color || "currentColor"} stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+			<path stroke-dasharray="20" stroke-dashoffset="20" d="M3 3V21">
+				<animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="20;0" />
+			</path>
+			<path stroke-dasharray="15" stroke-dashoffset="15" d="M21 12H7.5">
+				<animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" values="15;0" />
+			</path>
+			<path stroke-dasharray="8" stroke-dashoffset="8" d="M7 12L11 16M7 12L11 8">
+				<animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="8;0" />
+			</path>
+		</g>
+	</g>
+</svg>

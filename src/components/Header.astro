@@ -1,0 +1,68 @@
+---
+import CloseIcon from "../icons/CloseIcon.astro";
+import MenuIcon from "../icons/MenuIcon.astro";
+---
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const menuIcon = document.querySelector(".menu");
+  const closeIcon = document.querySelector(".close");
+
+  const menuList = document.getElementById("menu-list");
+  const menuLinks = document.querySelectorAll("#menu-list li a");
+
+  menuBtn?.addEventListener("click", () => {
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+    menuList?.classList.toggle("hidden");
+  })
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      menuList?.classList.add("hidden");
+    })
+  })
+
+</script>
+
+<header
+  id="header-nav"
+  class="fixed py-4 z-50 top-0 w-screen backdrop-blur-md text-white flex justify-center items-center"
+>
+  <div class="flex justify-between items-center w-[80%]">
+    <div class="flex justify-between items-center gap-3">
+      <img
+        class="rounded-full aspect-square w-12"
+        src="https://media2.giphy.com/media/Qt1jk5Q49C3h5CrlBe/giphy.gif?cid=ecf05e47yz47bze6ui1w4xz2bgmns0z1ump5id6bow4v5u1a&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+        alt="Foto de perfil"
+      />
+      <div class="flex flex-col">
+        <strong>Bautista Onorato</strong>
+        <span class="text-[#00a6fb] font-semibold">Desarrolador web</span>
+      </div>
+    </div>
+    <nav class="relative">
+      <button id="menu-btn" class="tablet:hidden">
+        <MenuIcon size={28} className="menu" />
+        <CloseIcon size={28} className="hidden close" />
+      </button>
+      <ul id="menu-list" class="hidden absolute bg-[#020202] px-5 w-[200px] space-y-2 py-4 rounded-md top-[110%] right-0 border border-[#616161] tablet:w-auto tablet:border-none tablet:p-0 tablet:bg-transparent tablet:static tablet:flex items-end gap-8">
+        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#home">Inicio</a></li>
+        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
+        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#projects">Proyectos</a></li>
+        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
+        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#skills">Habilidades</a></li>
+        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
+        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#about-me">Sobre mi</a></li>
+        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
+        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#contact">Contacto</a></li>
+      </ul>
+      <div></div>
+    </nav>
+  </div>
+</header>
+
+<style>
+
+</style>

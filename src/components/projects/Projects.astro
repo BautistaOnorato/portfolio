@@ -1,0 +1,21 @@
+---
+import { PROJECTS } from "../../consts/projects";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="projects" class="w-[80%] py-10 mx-auto flex flex-col gap-4">
+  <div class="space-y-2">
+    <span class="uppercase text-[#03a6f1] font-medium text-lg">PROYECTOS</span>
+    <h3 class="text-4xl font-semibold">Mis Proyectos</h3>
+  </div>
+  <div class="projects-list">
+    {
+      PROJECTS.map((project, i) => (     
+        <ProjectCard project={project} reverse={i % 2 !== 0} />
+        <div class="h-[2px] w-full bg-[#1b1b1b]" />
+      ))
+    }
+  </div>
+</section>
+
+

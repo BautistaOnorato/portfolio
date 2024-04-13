@@ -1,0 +1,71 @@
+---
+import type { Skill as SkillType } from '../../consts/skills'
+import Skill from './Skill'
+
+interface Props {
+  skills: SkillType[]
+  reverse?: boolean
+}
+
+const { skills, reverse } = Astro.props
+---
+
+<div class={`scroller ${reverse ? "reverse" : ""}`}>
+  <ul class="scroller-inner">
+    {skills.map((skill) => <Skill icon={skill.icon} name={skill.name} />)}
+  </ul>
+  <ul class="scroller-inner">
+    {skills.map((skill) => <Skill icon={skill.icon} name={skill.name} />)}
+  </ul>
+</div>
+
+<style>
+  .scroller {
+    padding: 1rem 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    width: 90%;
+  }
+
+  .scroller.reverse .scroller-inner {
+    animation-direction: reverse;
+    flex-direction: row-reverse;
+  }
+
+  .scroller-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    animation: 30s slide infinite linear;
+  }
+
+  .scroller::after,
+  .scroller::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #020202);
+    content: "";
+    z-index: 2;
+  }
+
+  .scroller::before {
+    left: 0;
+    background: linear-gradient(to left, transparent, #020202);
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 2rem));
+    }
+  }
+
+</style>

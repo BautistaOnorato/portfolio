@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Home from "../components/Home.astro";
+import Projects from "../components/projects/Projects.astro";
+import Skills from "../components/skills/Skills.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Contact from "../components/contact/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Bautista Onorato | Desarrollador Web">
+  <main>
+    <Home />
+    <div class="bg-[#020202] text-white">
+      <Projects />
+      <Skills />
+      <AboutMe />
+      <Contact />
+      <Footer />
+    </div>
+  </main>
+</Layout>

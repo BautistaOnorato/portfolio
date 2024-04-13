@@ -1,0 +1,58 @@
+---
+import Header from "../components/Header.astro";
+import "@fontsource-variable/jost";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: "Jost Variable", sans-serif;
+		scroll-behavior: smooth;
+  }
+
+  .Toastify__toast-theme--colored.Toastify__toast--success {
+    background: #03a6f1;
+  }
+
+  .view:hover {
+    --tw-shadow: 0 0 2px #fff, inset 0 0 2px #fff, 0 0 10px #03a6f1,
+      0 0 10px #03a6f1, 0 0 10px #03a6f1;
+    --tw-shadow-colored: 0 0 2px var(--tw-shadow-color),
+      inset 0 0 2px var(--tw-shadow-color), 0 0 10px var(--tw-shadow-color),
+      0 0 10px var(--tw-shadow-color), 0 0 10px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .active-view {
+    --tw-shadow: 0 0 2px #fff, inset 0 0 2px #fff, 0 0 10px #03a6f1,
+      0 0 10px #03a6f1, 0 0 10px #03a6f1;
+    --tw-shadow-colored: 0 0 2px var(--tw-shadow-color),
+      inset 0 0 2px var(--tw-shadow-color), 0 0 10px var(--tw-shadow-color),
+      0 0 10px var(--tw-shadow-color), 0 0 10px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+</style>

@@ -1,0 +1,140 @@
+---
+import type { Project } from "../../consts/projects";
+import GithubIcon from "../../icons/GithubIcon.astro";
+import WebIcon from "../../icons/WebIcon.astro";
+import ProjectImage from "./ProjectImage";
+import SkillTag from "./SkillTag";
+
+interface Props {
+  project: Project;
+  reverse?: boolean;
+}
+
+const { project, reverse } = Astro.props;
+---
+
+<!-- <script>
+  const desktopImg = document.querySelector("#desktop-img");
+  const tabletImg = document.querySelector("#tablet-img");
+  const mobileImg = document.querySelector("#mobile-img");
+  const mainImg = document.querySelector("#main-img");
+
+  desktopImg?.addEventListener("click", () => {
+    desktopImg.classList.add("active-view");
+    tabletImg?.classList.remove("active-view");
+    mobileImg?.classList.remove("active-view");
+    mainImg?.setAttribute("src", desktopImg.getAttribute("src")!);
+  });
+
+  tabletImg?.addEventListener("click", () => {
+    tabletImg.classList.add("active-view");
+    desktopImg?.classList.remove("active-view");
+    mobileImg?.classList.remove("active-view");
+    mainImg?.setAttribute("src", tabletImg.getAttribute("src")!);
+  });
+
+  mobileImg?.addEventListener("click", () => {
+    mobileImg.classList.add("active-view");
+    desktopImg?.classList.remove("active-view");
+    tabletImg?.classList.remove("active-view");
+    mainImg?.setAttribute("src", mobileImg.getAttribute("src")!);
+  });
+</script> -->
+<div
+  class={`project-card items-start flex flex-col tablet:flex-row pb-8 py-8 tablet:gap-8 ${reverse ? "tablet:flex-row-reverse" : ""}`}
+>
+  <div class="flex flex-col gap-6">
+    <h4 class="font-semibold text-3xl">{project.name}</h4>
+    <p class="opacity-80" id="hola">
+      {project.description}
+    </p>
+    {
+      project.extraDescription && (
+        <p class="opacity-80">{project.extraDescription}</p>
+      )
+    }
+    <div class="flex items-center justify-start gap-3 flex-wrap">
+      <a
+        href={project.website}
+        target="_blank"
+        class="border border-[#9e9e9e] px-4 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-[#242424] transition-all duration-200"
+        ><WebIcon size={24} /> Sitio Web</a
+      >
+      {
+        project.frontendRepo && (
+          <a
+            href={project.frontendRepo}
+            target="_blank"
+            class="border border-[#9e9e9e] px-4 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-[#242424] transition-all duration-200"
+          >
+            <GithubIcon size={24} /> Frontend
+          </a>
+        )
+      }
+      {
+        project.backendRepo && (
+          <a
+            href={project.backendRepo}
+            target="_blank"
+            class="border border-[#9e9e9e] px-4 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-[#242424] transition-all duration-200"
+          >
+            <GithubIcon size={24} /> Backend
+          </a>
+        )
+      }
+    </div>
+    <div class="flex items-center justify-start gap-2 flex-wrap">
+      {
+        project.skills.length > 0 &&
+          project.skills.map((skill) => (
+            <SkillTag name={skill.name} icon={skill.icon} />
+          ))
+      }
+    </div>
+  </div>
+  <!-- <div class="flex items-center justify-betweem flex-col h-full">
+    <div>
+      <img
+        src={project.desktopImage}
+        class="rounded-md tablet:min-w-[400px]"
+        alt={`${project.name} main image`}
+        id="main-img"
+      />
+    </div>
+    <div class="flex items-center justify-center gap-4">
+      <button class="p-2 rounded-md flex items-center justify-center">
+        <img
+          id="desktop-img"
+          src={project.desktopImage}
+          alt=`${project.name} desktop image`
+          class="w-16 p-2 transition-all duration-200 rounded-md active-view view"
+        />
+      </button>
+      <button class="p-2 rounded-md flex items-center justify-center">
+        <img
+          id="tablet-img"
+          src={project.tabletImage}
+          alt=`${project.name} tablet image`
+          class="w-16 p-2 transition-all duration-200 rounded-md view"
+        />
+      </button>
+      <button class="p-2 rounded-md flex items-center justify-center">
+        <img
+          id="mobile-img"
+          src={project.mobileImage}
+          alt=`${project.name} mobile image`
+          class="w-16 p-2 transition-all duration-200 rounded-md view"
+        />
+      </button>
+    </div>
+  </div> -->
+  <ProjectImage
+    client:load
+    name={project.name}
+    desktopImage={project.desktopImage}
+    tabletImage={project.tabletImage}
+    mobileImage={project.mobileImage}
+  />
+</div>
+
+<style></style>
