@@ -144,7 +144,7 @@ export const typescript: Skill = {
   icon: (size) => <TypescriptIcon size={size} />,
 };
 
-export const SKILLS: Skill[] = [
+export const SkillsFront: Skill[] = [
   html,
   css,
   javascript,
@@ -154,6 +154,9 @@ export const SKILLS: Skill[] = [
   typescript,
   astro,
   figma,
+] 
+
+export const SkillsBack: Skill[] = [
   mongodb,
   mysql,
   postgersql,

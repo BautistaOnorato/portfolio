@@ -21,7 +21,7 @@ const ProjectImage = ({ name, desktopImage, tabletImage, mobileImage }: ProhectI
       />
     </div>
     <div className="flex items-center justify-center gap-4">
-      <button className="p-2 rounded-md flex items-center justify-center" onClick={() => setMainImage(desktopImage)}>
+      <button id="desktop-image" className="p-2 rounded-md flex items-center justify-center" onClick={() => setMainImage(desktopImage)}>
         <img
           id="desktop-img"
           src={desktopImage}
@@ -29,7 +29,7 @@ const ProjectImage = ({ name, desktopImage, tabletImage, mobileImage }: ProhectI
           className={`w-16 p-2 transition-all duration-200 rounded-md ${desktopImage === mainImage ? "active-view" : "view"}`}
         />
       </button>
-      <button className="p-2 rounded-md flex items-center justify-center" onClick={() => setMainImage(tabletImage)}>
+      <button id="tablet-image" className="p-2 rounded-md flex items-center justify-center" onClick={() => setMainImage(tabletImage)}>
         <img
           id="tablet-img"
           src={tabletImage}
@@ -37,7 +37,7 @@ const ProjectImage = ({ name, desktopImage, tabletImage, mobileImage }: ProhectI
           className={`w-16 p-2 transition-all duration-200 rounded-md ${tabletImage === mainImage ? "active-view" : "view"}`}
         />
       </button>
-      <button className="p-2 rounded-md flex items-center justify-center" onClick={() => setMainImage(mobileImage)}>
+      <button id="desktop-image" className="p-2 rounded-md flex items-center justify-center" onClick={() => setMainImage(mobileImage)}>
         <img
           id="mobile-img"
           src={mobileImage}

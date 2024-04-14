@@ -24,9 +24,7 @@ const ContactForm = ({ pk, sId, tId }: { pk: string, sId: string, tId: string })
         setLoading(false)
         toast.success("Email enviado correctamente")
       },
-      (error) => {
-        console.log(error);
-        
+      () => {
         setError(true)
         setLoading(false)
       }
@@ -76,6 +74,7 @@ const ContactForm = ({ pk, sId, tId }: { pk: string, sId: string, tId: string })
         </p>
       )}
       <button
+        id="submit-contact-form"
         type="submit"
         className="font-semibold px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-transparent bg-[#03a6f1b0] cursor-pointer hover:bg-[#03a6f186] transition-all duration-200"
       >

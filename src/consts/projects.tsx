@@ -22,9 +22,9 @@ export const PROJECTS: Project[] = [
     frontendRepo: "https://github.com/proyecto-dnd/frontend",
     backendRepo: "https://github.com/proyecto-dnd/backend",
     skills: [nextjs, go, aws, mysql, typescript, figma, stripe],
-    desktopImage: "/img/dicelogger-desktop.png",
-    tabletImage: "/img/dicelogger-tablet.png",
-    mobileImage: "/img/dicelogger-mobile.png"
+    desktopImage: "/img/dicelogger-desktop.webp",
+    tabletImage: "/img/dicelogger-tablet.webp",
+    mobileImage: "/img/dicelogger-mobile.webp"
   },
   {
     name: "RoomRover",
@@ -34,9 +34,9 @@ export const PROJECTS: Project[] = [
     frontendRepo: "https://github.com/BautistaOnorato/LodgingFront",
     backendRepo: "https://github.com/BautistaOnorato/LodgingProyect",
     skills: [nextjs, typescript, mysql, tailwind, springboot],
-    desktopImage: "/img/roomrover-desktop.png",
-    tabletImage: "/img/roomrover-tablet.png",
-    mobileImage: "/img/roomrover-mobile.png"
+    desktopImage: "/img/roomrover-desktop.webp",
+    tabletImage: "/img/roomrover-tablet.webp",
+    mobileImage: "/img/roomrover-mobile.webp"
   },
 
 ]
