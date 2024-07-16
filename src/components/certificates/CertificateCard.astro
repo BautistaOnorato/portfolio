@@ -1,0 +1,14 @@
+---
+interface Props {
+  image: string
+  title: string
+  href: string
+}
+
+const { image, title, href } = Astro.props
+---
+
+<a href={href} class="rounded-md overflow-hidden relative group max-h-[300px]" target="_blank">
+  <img class="w-full h-full object-cover group-hover:brightness-[35%] transition-all" src={image} alt={title} />
+  <p class="absolute z-30 text-white font-bold left-[50%] top-[50%] transition-all translate-x-[-50%] translate-y-[-50%] w-full text-center text-xl hidden group-hover:block uppercase">{title}</p>
+</a>

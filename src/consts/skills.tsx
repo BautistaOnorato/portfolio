@@ -23,6 +23,7 @@ import {
   TailwindIcon,
   TypescriptIcon,
 } from "../icons/skills";
+import { PythonIcon } from "../icons/skills/PyIcon";
 
 export type Skill = {
   name: string;
@@ -135,13 +136,18 @@ export const stripe: Skill = {
 };
 
 export const tailwind: Skill = {
-  name: "Talwind CSS",
+  name: "Tailwind CSS",
   icon: (size) => <TailwindIcon size={size} />,
 };
 
 export const typescript: Skill = {
   name: "TypeScript",
   icon: (size) => <TypescriptIcon size={size} />,
+};
+
+export const python: Skill = {
+  name: "Python",
+  icon: (size) => <PythonIcon size={size} />,
 };
 
 export const SkillsFront: Skill[] = [
@@ -165,6 +171,7 @@ export const SkillsBack: Skill[] = [
   java,
   springboot,
   go,
+  python,
   docker,
   aws
 ];

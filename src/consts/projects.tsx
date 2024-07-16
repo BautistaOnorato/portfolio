@@ -1,4 +1,4 @@
-import { aws, figma, go, mysql, nextjs, prisma, springboot, stripe, tailwind, typescript, type Skill } from "./skills"
+import { aws, figma, go, mysql, nextjs, springboot, stripe, tailwind, typescript, type Skill } from "./skills"
 
 export type Project = {
   name: string
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
     name: "DiceLogger",
     description: "DiceLogger es una aplciación de gestión de campañas y personajes de Dungeons & Dragons.",
     extraDescription: "Además, Dicelogger permite a sus usuarios suscribirse para obtener contenido exclusivo y agregar amigos dentro de la aplicación.",
-    website: "https://proyecto-dnd.vercel.app/landing",
+    website: "https://dicelogger.vercel.app/landing",
     frontendRepo: "https://github.com/proyecto-dnd/frontend",
     backendRepo: "https://github.com/proyecto-dnd/backend",
     skills: [nextjs, go, aws, mysql, typescript, figma, stripe],
