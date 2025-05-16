@@ -29,12 +29,12 @@ const TEXTS = currentPath === "/en" ? HeaderTextEN : HeaderText
     })
   })
 
-  window.onclick = (e) => {
-    if (menuList?.classList.contains("hidden") || menuBtn?.contains(e.target)) return;
+  window.addEventListener("click", (e) => {
+    if (menuList?.classList.contains("hidden") || menuBtn?.contains(e.target as Node)) return;
     menuIcon?.classList.remove("hidden");
     closeIcon?.classList.add("hidden");
     menuList?.classList.add("hidden");
-  }
+  })
 </script>
 
 <header
