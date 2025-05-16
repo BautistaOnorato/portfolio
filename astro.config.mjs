@@ -10,5 +10,6 @@ export default defineConfig({
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "es",
-  }
+  },
+  site: "https://bautistaonorato.vercel.app/"
 });
