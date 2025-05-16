@@ -2,11 +2,13 @@
 import FilledEmail from "../icons/FilledEmail.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import RoundedGithubIcon from "../icons/RoundedGithubIcon.astro";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <footer class="w-[80%] py-6 px-6 mx-auto flex items-center justify-around flex-wrap-reverse gap-y-4">
   <div class="opacity-60">
-    Desarrollado por Bautista Onorato
+    {currentPath === "/en" ? "Developed by" : "Desarrollado por"} Bautista Onorato
   </div>
   <div class="flex gap-6">
     <a aria-label="Encuentrame en Github" class="opacity-60 focus:opacity-100 hover:opacity-100" href="https://github.com/BautistaOnorato"><RoundedGithubIcon size={32} /></a>

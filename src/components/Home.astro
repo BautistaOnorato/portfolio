@@ -1,6 +1,10 @@
 ---
 import ArrowRightIcon from "../icons/ArrowRightIcon.astro";
 import ArrowDownIcon from "../icons/ArrowDownIcon.astro";
+import { HomeText, HomeTextEN } from "../consts/text";
+
+const currentPath = Astro.url.pathname;
+const TEXTS = currentPath === "/en" ? HomeTextEN : HomeText;
 ---
 
 <section id="home" class="bg-[#121212] text-white pt-10">
@@ -9,7 +13,7 @@ import ArrowDownIcon from "../icons/ArrowDownIcon.astro";
   >
     <div class="space-y-4">
       <h2 class="text-3xl sm:text-5xl font-bold text-[#03a7f1]">
-        Desarrollador web
+        {TEXTS.subtitle}
       </h2>
       <h1 class="text-4xl sm:text-7xl font-bold">Bautista Onorato</h1>
     </div>
@@ -27,10 +31,10 @@ import ArrowDownIcon from "../icons/ArrowDownIcon.astro";
         >GitHub <ArrowRightIcon size={24} /></a
       >
       <a
-        href="/CV_BautistaOnorato.pdf"
+        href={TEXTS.curriculum.href}
         download="CV_BautistaOnorato"
         class="px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-transparent bg-[#03a6f1b0] cursor-pointer hover:bg-[#03a6f186] transition-all duration-200"
-        >Descargar CV <ArrowDownIcon size={24} /></a
+        >{TEXTS.curriculum.text} <ArrowDownIcon size={24} /></a
       >
     </div>
   </div>

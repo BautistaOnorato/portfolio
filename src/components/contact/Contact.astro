@@ -2,18 +2,22 @@
 import ArrowRightIcon from "../../icons/ArrowRightIcon.astro";
 import EmailIcon from "../../icons/EmailIcon.astro";
 import ContactForm from "./ContactForm";
+import { ContactText, ContactTextEN } from "../../consts/text"
 
 const EMAILJS_PUBLIC_KEY = import.meta.env.EMAILJS_PUBLIC_KEY;
 const EMAILJS_SERVICE_ID = import.meta.env.EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.EMAILJS_TEMPLATE_ID; 
+
+const currentPath = Astro.url.pathname;
+const TEXT: any = currentPath === "/en" ? ContactTextEN : ContactText;
 ---
 <section id="contact" class="w-[80%] mx-auto flex flex-col gap-4">
-  <h3 class="text-4xl font-semibold">Contacto</h3>
+  <h3 class="text-4xl font-semibold">{currentPath === "/en" ? "Contact" : "Contacto"}</h3>
   <div class="w-full flex justify-between gap-8">
-    <ContactForm client:load pk={EMAILJS_PUBLIC_KEY} sId={EMAILJS_SERVICE_ID} tId={EMAILJS_TEMPLATE_ID} />
+    <ContactForm client:load pk={EMAILJS_PUBLIC_KEY} sId={EMAILJS_SERVICE_ID} tId={EMAILJS_TEMPLATE_ID} TEXT={TEXT} />
     <div class="max-[950px]:hidden w-[2px] bg-[#121212]"> 
     </div>
-    <div class="max-[950px]:hidden flex flex-col items-center justify-center gap-6">
+    <div class="max-[950px]:hidden flex flex-col items-center gap-6">
       <img class="w-80" src="/img/email.svg" alt="" />
       <div class="flex gap-4">
         <a

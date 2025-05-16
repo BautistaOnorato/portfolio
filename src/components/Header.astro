@@ -1,6 +1,11 @@
 ---
 import CloseIcon from "../icons/CloseIcon.astro";
 import MenuIcon from "../icons/MenuIcon.astro";
+import { ROUTES } from "../consts/routes"
+import { HeaderText, HeaderTextEN } from "../consts/text";
+
+const currentPath = Astro.url.pathname;
+const TEXTS = currentPath === "/en" ? HeaderTextEN : HeaderText
 ---
 <script>
   const menuBtn = document.getElementById("menu-btn");
@@ -24,14 +29,29 @@ import MenuIcon from "../icons/MenuIcon.astro";
     })
   })
 
+  window.onclick = (e) => {
+    if (menuList?.classList.contains("hidden") || menuBtn?.contains(e.target)) return;
+    menuIcon?.classList.remove("hidden");
+    closeIcon?.classList.add("hidden");
+    menuList?.classList.add("hidden");
+  }
 </script>
 
 <header
   id="header-nav"
   class="fixed py-4 z-50 top-0 w-screen backdrop-blur-md text-white flex justify-center items-center"
 >
-  <div class="flex justify-between items-center w-[80%]">
-    <div class="flex justify-between items-center gap-3">
+  <div class="flex justify-start gap-8 items-center w-[80%]">
+    <div>
+      <a class={`${currentPath === "/" ? "text-[#00a6fb]" : "opacity-70 hover:opacity-100"}`} href="/">
+        ES
+      </a>
+      |
+      <a class={`${currentPath === "/en" ? "text-[#00a6fb]" : "opacity-70 hover:opacity-100"}`} href="/en">
+        EN
+      </a>
+    </div>
+    <div class="flex justify-center items-center gap-3 flex-1 tablet:flex-initial">
       <img
         class="rounded-full aspect-square w-12"
         src="/img/me.jpeg"
@@ -39,28 +59,26 @@ import MenuIcon from "../icons/MenuIcon.astro";
       />
       <div class="flex flex-col">
         <strong>Bautista Onorato</strong>
-        <span class="text-[#00a6fb] font-semibold">Desarrolador web</span>
+        <span class="text-[#00a6fb] font-semibold">{TEXTS.position}</span>
       </div>
     </div>
-    <nav class="relative">
+    <nav class="relative flex-initial tablet:flex-1 flex justify-end items-center">
       <button id="menu-btn" class="tablet:hidden">
         <MenuIcon size={28} className="menu" />
         <CloseIcon size={28} className="hidden close" />
       </button>
       <ul id="menu-list" class="hidden absolute bg-[#020202] px-5 w-[200px] space-y-2 py-4 rounded-md top-[110%] right-0 border border-[#616161] tablet:w-auto tablet:border-none tablet:p-0 tablet:bg-transparent tablet:static tablet:flex items-end gap-8">
-        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#home">Inicio</a></li>
-        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
-        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#projects">Proyectos</a></li>
-        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
-        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#skills">Habilidades</a></li>
-        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
-        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#about-me">Sobre mi</a></li>
-        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
-        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#certificates">Certifiacados</a></li>
-        <div class="tablet:hidden static h-[1px] w-full bg-[#616161]"></div>
-        <li class="tablet:w-auto w-full"><a class="opacity-70 hover:opacity-100 w-full block" href="#contact">Contacto</a></li>
+        {
+          ROUTES.map((route, i) => (
+            <li class="tablet:w-auto w-full">
+              <a class="opacity-70 hover:opacity-100 w-full block" href={route.path}>
+                {currentPath === "/en" ? route.nameEN : route.name}
+              </a>
+              {i < ROUTES.length - 1 && <div class="tablet:hidden static h-[1px] w-full bg-[#616161] my-2"></div>}
+            </li>
+          ))
+        }
       </ul>
-      <div></div>
     </nav>
   </div>
 </header>

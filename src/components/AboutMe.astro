@@ -1,10 +1,16 @@
+---
+import { AboutText, AboutTextEN } from "../consts/text"
+
+const currentPath = Astro.url.pathname;
+const TEXTS = currentPath === "/en" ? AboutTextEN : AboutText;
+---
 <section id="about-me" class="w-[80%] pb-10 mx-auto flex flex-col gap-8">
   <div
     class="flex tablet:flex-row flex-col items-center justify-between gap-8 tablet:gap-20"
   >
     <div class="space-y-2 flex-1">
       <span class="uppercase text-[#03a6f1] font-medium text-md sm:text-lg"
-        >SOBRE MI</span
+        >{TEXTS.title}</span
       >
       <h3
         class="text-xl sm:text-2xl tablet:text-4xl font-semibold pb-3 tablet:pb-6"
@@ -13,14 +19,10 @@
       </h3>
       <div class="flex flex-col gap-4 opacity-75">
         <p>
-          Soy un desarrollador de software de 21 años especializado en aplicaciones web full stack
-          con React y Spring Boot/Go.
+          {TEXTS.desc1}
         </p>
         <p>
-          Empecé mi camino en el mundo de la programación en el año 2022 y en
-          2024 me gradué como especialista en aplicaciones backend. Tengo dos
-          años de experiencia desarrollando programas y el First Certificate in
-          English de la universidad de Cambridge.
+          {TEXTS.desc2}
         </p>
       </div>
     </div>

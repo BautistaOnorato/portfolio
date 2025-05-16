@@ -3,7 +3,9 @@ import { aws, figma, go, mysql, nextjs, springboot, stripe, tailwind, typescript
 export type Project = {
   name: string
   description: string
+  descriptionEN: string
   extraDescription?: string
+  extraDescriptionEN?: string
   website: string
   frontendRepo?: string
   backendRepo?: string
@@ -17,7 +19,9 @@ export const PROJECTS: Project[] = [
   {
     name: "DiceLogger",
     description: "DiceLogger es una aplciación de gestión de campañas y personajes de Dungeons & Dragons.",
-    extraDescription: "Además, Dicelogger permite a sus usuarios suscribirse para obtener contenido exclusivo y agregar amigos dentro de la aplicación.",
+    descriptionEN: "DiceLogger is a campaign and character management application for Dungeons & Dragons.",
+    extraDescription: "Además, Dicelogger permite a sus usuarios suscribirse para obtener contenido exclusivo, agregar amigos dentro de la aplicación y compartir las campañas.",
+    extraDescriptionEN: "In addition, Dicelogger allows its users to subscribe to obtain exclusive content, add friends within the application, and share campaigns.",
     website: "https://dicelogger.vercel.app/landing",
     frontendRepo: "https://github.com/proyecto-dnd/frontend",
     backendRepo: "https://github.com/proyecto-dnd/backend",
@@ -29,7 +33,9 @@ export const PROJECTS: Project[] = [
   {
     name: "RoomRover",
     description: "RoomRover es una plataforma para reservar alojamientos desarrollada con Next.js y Java Spring Boot.",
+    descriptionEN: "RoomRover is a platform for booking accommodations developed with Next.js and Java Spring Boot.",
     extraDescription: "Permite a los usuarios registrados realizar reservas y agregar productos a sus favoritos.",
+    extraDescriptionEN: "It allows registered users to make reservations and manage favorite products.",
     website: "https://lodging-front.vercel.app/",
     frontendRepo: "https://github.com/BautistaOnorato/LodgingFront",
     backendRepo: "https://github.com/BautistaOnorato/LodgingProyect",

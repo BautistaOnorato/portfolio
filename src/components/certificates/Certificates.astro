@@ -1,10 +1,12 @@
 ---
 import { CERTIFICATES } from "../../consts/certificates";
 import CertificateCard from "./CertificateCard.astro";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <section id="certificates" class="w-[80%] mx-auto flex flex-col gap-4">
-  <h3 class="text-4xl font-semibold mb-2">Certificados</h3>
+  <h3 class="text-4xl font-semibold mb-2">{currentPath === "/en" ? "Certificates" : "Certificados"}</h3>
   <div class="w-full grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-3 gap-8">
     {
       CERTIFICATES.map((certificate) => <CertificateCard image={certificate.image} title={certificate.title} href={certificate.href} />)

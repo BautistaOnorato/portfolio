@@ -4,7 +4,7 @@ export default {
   theme: {
     screens: {
       "sm": "726px",
-      "tablet": "978px"
+      "tablet": "1168px"
     }
   },
   plugins: [],
