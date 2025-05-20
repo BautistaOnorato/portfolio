@@ -22,8 +22,9 @@ import {
   StripeIcon,
   TailwindIcon,
   TypescriptIcon,
+  SeleniumIcon,
+  PythonIcon
 } from "../icons/skills";
-import { PythonIcon } from "../icons/skills/PyIcon";
 
 export type Skill = {
   name: string;
@@ -150,6 +151,11 @@ export const python: Skill = {
   icon: (size) => <PythonIcon size={size} />,
 };
 
+export const selenium: Skill = {
+  name: "Selenium",
+  icon: (size) => <SeleniumIcon size={size} />,
+};
+
 export const SkillsFront: Skill[] = [
   html,
   css,
@@ -160,7 +166,8 @@ export const SkillsFront: Skill[] = [
   typescript,
   astro,
   figma,
-] 
+  selenium,
+];
 
 export const SkillsBack: Skill[] = [
   mongodb,
@@ -173,5 +180,5 @@ export const SkillsBack: Skill[] = [
   go,
   python,
   docker,
-  aws
+  aws,
 ];

@@ -21,3 +21,5 @@ export * from "./SpringbootIcon";
 export * from "./StripeIcon";
 export * from "./TailwindIcon";
 export * from "./TypeScriptIcon";
+export * from "./SeleniumIcon";
+export * from "./PyIcon";
