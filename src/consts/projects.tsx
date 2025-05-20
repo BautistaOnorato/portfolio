@@ -1,4 +1,4 @@
-import { aws, figma, go, mysql, nextjs, springboot, stripe, tailwind, typescript, type Skill } from "./skills"
+import { astro, aws, css, figma, go, mysql, nextjs, react, springboot, stripe, tailwind, typescript, type Skill } from "./skills"
 
 export type Project = {
   name: string
@@ -16,6 +16,19 @@ export type Project = {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    name: "Hay algo ahí",
+    description: "Página con toda la información acerca de la primera temporada del programa de streaming Hay algo ahí.",
+    descriptionEN: "Page with all the information about the first season of the streaming show Hay algo ahí.",
+    extraDescription: "Esta página fue realizada utilizando Astro como framework principal, aprovechando su eficiencia para generar contenido estático. Se utilizó React en los componentes que requieren interacción con el usuario, permitiendo una experiencia dinámica sin sacrificar el rendimiento.",
+    extraDescriptionEN: "This site was built with Astro as the core framework to deliver fast, static content. React was integrated for components that involve user interaction, ensuring a smooth and dynamic user experience.",
+    website: "https://estoeshaa.vercel.app/",
+    frontendRepo: "https://github.com/BautistaOnorato/HAA",
+    skills: [css, astro, react, typescript, figma],
+    desktopImage: "/img/haa-desktop.webp",
+    tabletImage: "/img/haa-tablet.webp",
+    mobileImage: "/img/haa-mobile.webp"
+  },
   {
     name: "DiceLogger",
     description: "DiceLogger es una aplciación de gestión de campañas y personajes de Dungeons & Dragons.",
