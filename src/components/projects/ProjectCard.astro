@@ -52,6 +52,17 @@ const { project, reverse } = Astro.props;
           </a>
         )
       }
+      {
+        project.monoRepo && (
+          <a
+            href={project.monoRepo}
+            target="_blank"
+            class="border border-[#9e9e9e] px-4 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-[#242424] transition-all duration-200"
+          >
+            <GithubIcon size={24} /> Github
+          </a>
+        )
+      }
     </div>
     <div class="flex items-center justify-start gap-2 flex-wrap">
       {
@@ -70,5 +81,3 @@ const { project, reverse } = Astro.props;
     mobileImage={project.mobileImage}
   />
 </div>
-
-<style></style>

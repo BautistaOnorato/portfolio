@@ -23,8 +23,14 @@ import {
   TailwindIcon,
   TypescriptIcon,
   SeleniumIcon,
-  PythonIcon
+  PythonIcon,
 } from "../icons/skills";
+import { BetterAuthIcon } from "../icons/skills/BetterAuthIcon";
+import { DrizzleIcon } from "../icons/skills/DrizzleIcon";
+import { InngestIcon } from "../icons/skills/InngestIcon";
+import { NeonIcon } from "../icons/skills/NeonIcon";
+import { OpenAIIcon } from "../icons/skills/OpenAiIcon";
+import { PolarIcon } from "../icons/skills/PolarIcon";
 
 export type Skill = {
   name: string;
@@ -154,6 +160,36 @@ export const python: Skill = {
 export const selenium: Skill = {
   name: "Selenium",
   icon: (size) => <SeleniumIcon size={size} />,
+};
+
+export const betterAuth: Skill = {
+  name: "BetterAuth",
+  icon: (size) => <BetterAuthIcon size={size} />,
+};
+
+export const openAi: Skill = {
+  name: "OpenAI",
+  icon: (size) => <OpenAIIcon size={size} />,
+};
+
+export const drizzle: Skill = {
+  name: "Drizzle ORM",
+  icon: (size) => <DrizzleIcon size={size} />,
+};
+
+export const neon: Skill = {
+  name: "Neon",
+  icon: (size) => <NeonIcon size={size} />,
+};
+
+export const inngest: Skill = {
+  name: "Inngest",
+  icon: (size) => <InngestIcon size={size} />,
+};
+
+export const polar: Skill = {
+  name: "Polar",
+  icon: (size) => <PolarIcon size={size} />,
 };
 
 export const SkillsFront: Skill[] = [
