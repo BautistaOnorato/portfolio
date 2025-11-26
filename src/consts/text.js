@@ -7,18 +7,18 @@ export const HeaderTextEN = {
 }
 
 export const HomeText = {
-  subtitle: "Desarrollador web",
+  subtitle: "Desarrollador web & Técnico IT",
   curriculum: {
     text: "Descargar CV",
-     href: "/CV_BautistaOnorato.pdf"
+     href: "/CV Bautista Onorato.pdf"
   }
 }
 
 export const HomeTextEN = {
-  subtitle: "Web developer",
+  subtitle: "Web developer & IT technician",
   curriculum: {
     text: "Download CV",
-     href: "/CV_BautistaOnorato_EN.pdf"
+     href: "/CV Bautista Onorato (English).pdf"
   }
 }
 
@@ -44,14 +44,14 @@ export const SkillsTextEN = {
 
 export const AboutText = {
   title: "Sobre mí",
-  desc1: "Soy un desarrollador de software de 21 años especializado en aplicaciones web full stack con React y Spring Boot/Go.",
-  desc2: "Empecé mi camino en el mundo de la programación en el año 2022 y en 2024 me gradué como especialista en aplicaciones backend. Tengo dos años de experiencia desarrollando programas y cuento con un nivel avanzado de inglés (B2).",
+  desc1: "Mi nombre es Bautista Onorato, tengo 21 años y actualmente estoy dando un giro en mi carrera profesional hacia el campo de la ciberseguridad. Tras formarme como desarrollador Full Stack —principalmente con React en el frontend y Spring Boot o Go en el backend— descubrí que mi verdadera motivación está en proteger sistemas, entender cómo funcionan a nivel profundo y asegurar su correcto funcionamiento.",
+  desc2: "Recientemente obtuve la certificación CompTIA A+, un primer paso concreto dentro del camino hacia la seguridad informática. Hoy me encuentro enfocado en adquirir experiencia práctica en roles de soporte técnico o Help Desk, donde puedo aplicar mis conocimientos técnicos, mi capacidad para resolver problemas y mi orientación al detalle, mientras continúo construyendo una base sólida en IT y ciberseguridad.",
 }
 
 export const AboutTextEN = {
   title: "About me",
-  desc1: "I am a software developer specialized in full stack web applications using React and Spring Boot/Go.",
-  desc2: "I began my programming journey in 2022, and in 2024 I graduated as a backend application specialist. I have two years of experience developing software and I have an advanced level of English (B2).",
+  desc1: "My name is Bautista Onorato, I’m 21 years old, and I am currently shifting my career toward the field of cybersecurity. After training as a Full Stack developer —working mainly with React on the frontend and Spring Boot or Go on the backend— I realized that my true motivation lies in protecting systems, understanding how they work at a deeper level, and ensuring they operate securely and reliably.",
+  desc2: "I recently earned the CompTIA A+ certification, marking my first concrete step toward the cybersecurity path. I am now focused on gaining practical experience in Technical Support or Help Desk roles, where I can apply my technical knowledge, problem-solving abilities, and attention to detail, while continuing to build a strong foundation in IT and cybersecurity.",
 }
 
 export const ContactText = {
