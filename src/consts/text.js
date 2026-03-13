@@ -10,7 +10,8 @@ export const HomeText = {
   subtitle: "Desarrollador web & Técnico IT",
   curriculum: {
     text: "Descargar CV",
-     href: "/CV Bautista Onorato.pdf"
+    href: "/Bautista Onorato CV.pdf",
+    download: "Bautista Onorato CV.pdf"
   }
 }
 
@@ -18,7 +19,8 @@ export const HomeTextEN = {
   subtitle: "Web developer & IT technician",
   curriculum: {
     text: "Download CV",
-     href: "/CV Bautista Onorato (English).pdf"
+     href: "/Bautista Onorato CV (English).pdf",
+     download: "Bautista Onorato CV (English).pdf"
   }
 }
 
